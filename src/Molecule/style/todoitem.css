@@ -1,0 +1,19 @@
+.buttonWrapper {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listButton {
+    background-color: honeydew;
+    border: none;
+    margin: 5px;
+    border-radius: 15px;
+    padding: 3px 10px;
+}
+
+.listButton:hover {
+    color: #f0fff0;
+    background-color: black;
+}

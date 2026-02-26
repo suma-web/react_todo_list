@@ -1,0 +1,13 @@
+.inputButton {
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.5);
+}
+
+.inputButton:hover {
+    color: green;
+    background-color: white;
+}
