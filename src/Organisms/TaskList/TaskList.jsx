@@ -2,14 +2,15 @@ import { useState } from "react";
 import { TodoItem } from "../../molecules/TodoItem/TodoItem";
 import { InputForm } from "../../molecules/InputForm/InputForm";
 
+import styles from "./TaskList.molecule.css"
 
 export const Task = () => {
     const [todoContent, setTodoContent] = useState("");
     const [todoList, setTodoList] = useState([]);
 
     const onClickCheck = (id) => {
-        setTodoListArr(
-            todoListArr.map((todo) =>
+        setTodoList(
+            todoList.map((todo) =>
                 value.id === id ? { ...todo, isCompleted: !value.isCompleted } : todo
             )
         );
@@ -49,39 +50,10 @@ export const Task = () => {
         setTodoContent("");
     };
 
-    const styleTodoList = {
-        paddingLeft: "5px",
-        listStyle: "none",
-        backgroundColor: "green",
-        color: "white",
-        borderRadius: "20px",
-        boxShadow: "5px 5px 10px rgba(192, 192, 192, 0.5)"
-    }
-
-    const styleTaskShow = {
-        textAlign: "center",
-        display: "flex",
-        alignItems: "center",
-        gap: "15px",
-    }
-
-    const styleInput = {
-        fontSize: "15px",
-        textAlign: "center",
-        display: "flex",
-        alignItems: "center",
-        gap: "20px"
-    }
-
-
     return ( 
-        <div style={{
-            width: "80%",
-            position: "relative",
-            left: "10%"
-        }}>
+        <div className={styles.content}>
             <h3>Task Input</h3>
-            <div style={styleInput}>
+            <div className={styles.Input}>
                 <InputForm
                     todoContent={todoContent}
                     setTodoContent={setTodoContent}
@@ -89,14 +61,14 @@ export const Task = () => {
                 />
             </div>
 
-            <div style={styleTaskShow}>
+            <div className={styles.TaskShow}>
                 <label>All-tasks:</label><p>{todoList.length}</p>
                 <label>Completed:</label><p>{todoList.filter(todo => todo.isCompleted).length}</p>
                 <label>Incompleted:</label><p>{todoList.filter(todo => !todo.isCompleted).length}</p>
             </div>
 
             <h3>All-Todo Lists</h3>
-            <ul style={styleTodoList}>
+            <ul className={styles.TodoList}>
                 {todoList.map(todo => (
                     <TodoItem
                         key={todo.id}
