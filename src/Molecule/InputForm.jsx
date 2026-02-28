@@ -1,5 +1,5 @@
-import { Input } from "../Atomics/Input"
-import { InputButton } from "../Atomics/InputButton"
+import { Input } from "../atoms/Input/Input"
+import { InputButton } from "../atoms/Button/Button"
 
 export const InputForm = ({todoContent,setTodoContent, onClickCreateContent}) => {
     return (

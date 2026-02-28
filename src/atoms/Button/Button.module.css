@@ -1,4 +1,4 @@
-.inputButton {
+.button {
     color: white;
     background-color: green;
     border: none;
@@ -7,7 +7,7 @@
     box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.5);
 }
 
-.inputButton:hover {
+.button:hover {
     color: green;
     background-color: white;
 }
