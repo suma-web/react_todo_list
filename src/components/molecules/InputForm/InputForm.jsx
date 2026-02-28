@@ -1,5 +1,5 @@
 import { Input } from "../../atoms/Input/Input"
-import { PrimaryButton } from "../../atoms/Button/PrimaryButton"
+import { PrimaryButton } from "../../atoms/PrimaryButton/PrimaryButton"
 
 export const InputForm = ({todoContent,setTodoContent,onClickCreateContent}) => {
   return (
