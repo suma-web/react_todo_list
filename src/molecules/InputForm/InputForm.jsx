@@ -7,6 +7,7 @@ export const InputForm = ({todoContent,setTodoContent,onClickCreateContent,}) =>
       <Input
         value={todoContent}
         onChange={(e) => setTodoContent(e.target.value)}
+        placeholder="Here, write a task"
       />
 
       {todoContent.length > 0 && (
