@@ -11,7 +11,6 @@ export const TodoItem = ({todo, onCheck, onRewrite, onDelete}) => {
     }
 
     return (
-        <>
             <li style={list} key={todo.id}>
                 <input style={checkbox}
                     type="checkbox" 
@@ -28,7 +27,5 @@ export const TodoItem = ({todo, onCheck, onRewrite, onDelete}) => {
                         onClick={() => onDelete(todo.id)}/>
                 </div>
             </li>
-
-        </>
     );
 }
