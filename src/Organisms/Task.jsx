@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { TodoItem } from "../Molecule/TodoItem";
-import { InputForm } from "../Molecule/InputForm";
+import { TodoItem } from "../molecules/TodoItem/TodoItem";
+import { InputForm } from "../molecules/InputForm/InputForm";
 
 
 export const Task = () => {
