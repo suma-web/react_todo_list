@@ -9,14 +9,14 @@ export const Task = () => {
 
     const onClickCheck = (id) => {
         setTodoList(
-            todoList.map((tdo) => {
-                if (tdo.id === id){
+            todoList.map((todo) => {
+                if (todo.id === id){
                     return {
-                        ...tdo,
-                        isCompleted: !(tdo.isCompleted)
+                        ...todo,
+                        isCompleted: !(todo.isCompleted)
                     }
                 } else {
-                    return tdo;
+                    return todo;
                 }
             })
         )
@@ -24,18 +24,18 @@ export const Task = () => {
 
     const onClickRewrite = (id) => {
         const rewriteContent = prompt(
-            "Do you want to rewrite this content？", todoList.find((tdo) => tdo.id === id).content
+            "Do you want to rewrite this content？", todoList.find((todo) => todo.id === id).content
         )
         if (rewriteContent !== null && rewriteContent.trim() !== ""){
             setTodoList(
-                todoList.map((tdo)=>{
-                    if (tdo.id === id){
+                todoList.map((todo)=>{
+                    if (todo.id === id){
                         return {
-                                ...tdo,
+                                ...todo,
                                 content: rewriteContent
                             };
                     } else {
-                        return tdo;
+                        return todo;
                     }
                 })
             );
@@ -45,8 +45,8 @@ export const Task = () => {
     const onClickDelete = (id) => {
         if (confirm("Do you want to delete this task?")) {
             setTodoList(
-                [...todoList.filter((tdo) => {
-                    return tdo.id !== id;
+                [...todoList.filter((todo) => {
+                    return todo.id !== id;
                 })]
             );
         } else {
