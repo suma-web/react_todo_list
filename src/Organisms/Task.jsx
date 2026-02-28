@@ -16,23 +16,20 @@ export const Task = () => {
     }
 
     const onClickRewrite = (id) => {
+        const targetTodo = todoList.find((todo) => todo.id === id);
+        
+        if(!targetTodo) return;   // 存在チェック
+        
         const rewriteContent = prompt(
-            "Do you want to rewrite this content？", todoList.find((todo) => todo.id === id).content
+            "Do you want to rewrite this？", targetTodo.content
         )
-        if (rewriteContent !== null && rewriteContent.trim() !== ""){
-            setTodoList(
-                todoList.map((todo)=>{
-                    if (todo.id === id){
-                        return {
-                                ...todo,
-                                content: rewriteContent
-                            };
-                    } else {
-                        return todo;
-                    }
-                })
-            );
-        }
+
+        if (rewriteContent !== null || rewriteContent.trim() !== "") return;
+        setTodoList(
+            todoList.map((todo) =>
+                todo.id === id ? { ...todo, content: rewriteContent } : todo
+            )
+        );
     }
     
     const onClickDelete = (id) => {
