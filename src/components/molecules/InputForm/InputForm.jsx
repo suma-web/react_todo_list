@@ -12,7 +12,7 @@ export const InputForm = ({todoContent,setTodoContent,onClickCreateContent}) => 
 
       {todoContent.length > 0 && (
         <PrimaryButton onClick={onClickCreateContent}>
-          Add
+          Create a Task
         </PrimaryButton>
       )}
     </>
