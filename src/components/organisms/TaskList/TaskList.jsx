@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TodoItem } from "../../molecules/TodoItem/TodoItem";
 import { InputForm } from "../../molecules/InputForm/InputForm";
 
-import styles from "./TaskList.molecule.css"
+import styles from "./TaskList.module.css"
 
 export const Task = () => {
     const [todoContent, setTodoContent] = useState("");
