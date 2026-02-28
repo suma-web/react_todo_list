@@ -25,7 +25,8 @@ export const TaskList = () => {
             "Do you want to rewrite this？", targetTodo.content
         )
 
-        if (rewriteContent !== null || rewriteContent.trim() !== "") return;
+        if (rewriteContent === null || rewriteContent.trim() === "") return;
+
         setTodoList(
             todoList.map((todo) =>
                 todo.id === id ? { ...todo, content: rewriteContent } : todo
