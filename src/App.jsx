@@ -1,5 +1,5 @@
-import { Header } from "./Organisms/Header"
-import { TaskList } from "./Organisms/TaskList"
+import { Header } from "./organisms/Header"
+import { TaskList } from "./organisms/TaskList"
 import "./App.css"
 
 function App() {
