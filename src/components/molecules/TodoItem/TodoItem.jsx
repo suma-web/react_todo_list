@@ -1,4 +1,4 @@
-import styles from "./TodoItem.modelue.css";
+import styles from "./TodoItem.module.css";
 import { SecondaryButton } from "../../atoms/SecondaryButton/SecondaryButton";
 import { Checkbox } from "../../atoms/Checkbox/Checkbox";
 
