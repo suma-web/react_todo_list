@@ -23,16 +23,16 @@ export const Task = () => {
     }
 
     const onClickRewrite = (rewriteIndex) => {
-        const rewiteContent = prompt(
-            "再編集しますか？", todoListArr.find((todo) => todo.id === rewriteIndex).content
+        const rewriteContent = prompt(
+            "Do you want to rewrite this content？", todoListArr.find((todo) => todo.id === rewriteIndex).content
         )
-        if (rewiteContent !== null && rewiteContent.trim() !== ""){
+        if (rewriteContent !== null && rewriteContent.trim() !== ""){
             setTodoListArr(
                 todoListArr.map((value)=>{
                     if (value.id === rewriteIndex){
                         return {
                                 ...value,
-                                content: rewiteContent
+                                content: rewriteContent
                             };
                     } else {
                         return value;
