@@ -1,6 +1,6 @@
 import styles from "./Input.module.css";
 
-export const Input = ({value, onChange, placeholder, ...props}) => {
+export const Input = ({value, onChange, placeholder="Enter text", ...props}) => {
     return (
         <input 
             className={styles.input}
