@@ -1,12 +1,12 @@
 import { Header } from "./Organisms/Header"
-import { Task } from "./Organisms/Task"
+import { TaskList } from "./Organisms/TaskList"
 import "./App.css"
 
 function App() {
   return (
     <>
       <Header />
-      <Task />
+      <TaskList />
     </>
   )
 }
