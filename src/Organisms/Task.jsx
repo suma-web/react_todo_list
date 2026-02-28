@@ -92,8 +92,7 @@ export const Task = () => {
     }
 
 
-    return (
-    <>  
+    return ( 
         <div style={{
             width: "80%",
             position: "relative",
@@ -127,6 +126,5 @@ export const Task = () => {
                 ))}
             </ul>
         </div>
-    </>
     );
 }
