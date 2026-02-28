@@ -5,48 +5,48 @@ import { InputForm } from "../Molecule/InputForm";
 
 export const Task = () => {
     const [todoContent, setTodoContent] = useState("");
-    const [todoListArr, setTodoListArr] = useState([]);
+    const [todoList, setTodoList] = useState([]);
 
-    const onClickCheck = (checkIndex) => {
-        setTodoListArr(
-            todoListArr.map((value) => {
-                if (value.id === checkIndex){
+    const onClickCheck = (id) => {
+        setTodoList(
+            todoList.map((tdo) => {
+                if (tdo.id === id){
                     return {
-                        ...value,
-                        isCompleted: !(value.isCompleted)
+                        ...tdo,
+                        isCompleted: !(tdo.isCompleted)
                     }
                 } else {
-                    return value;
+                    return tdo;
                 }
             })
         )
     }
 
-    const onClickRewrite = (rewriteIndex) => {
+    const onClickRewrite = (id) => {
         const rewriteContent = prompt(
-            "Do you want to rewrite this content？", todoListArr.find((todo) => todo.id === rewriteIndex).content
+            "Do you want to rewrite this content？", todoList.find((tdo) => tdo.id === id).content
         )
         if (rewriteContent !== null && rewriteContent.trim() !== ""){
-            setTodoListArr(
-                todoListArr.map((value)=>{
-                    if (value.id === rewriteIndex){
+            setTodoList(
+                todoList.map((tdo)=>{
+                    if (tdo.id === id){
                         return {
-                                ...value,
+                                ...tdo,
                                 content: rewriteContent
                             };
                     } else {
-                        return value;
+                        return tdo;
                     }
                 })
             );
         }
     }
     
-    const onClickDelete = (deleteIndex) => {
+    const onClickDelete = (id) => {
         if (confirm("Do you want to delete this task?")) {
-            setTodoListArr(
-                [...todoListArr.filter((value) => {
-                    return value.id !== deleteIndex;
+            setTodoList(
+                [...todoList.filter((tdo) => {
+                    return tdo.id !== id;
                 })]
             );
         } else {
@@ -55,8 +55,8 @@ export const Task = () => {
     };
 
     const onClickCreateContent = () => {
-        setTodoListArr(
-            [...todoListArr, 
+        setTodoList(
+            [...todoList, 
                 {
                     id: crypto.randomUUID(),
                     content: todoContent,
@@ -108,14 +108,14 @@ export const Task = () => {
             </div>
 
             <div style={styleTaskShow}>
-                <label>All-tasks:</label><p>{todoListArr.length}</p>
-                <label>Completed:</label><p>{todoListArr.filter(todo => todo.isCompleted).length}</p>
-                <label>Incompleted:</label><p>{todoListArr.filter(todo => !todo.isCompleted).length}</p>
+                <label>All-tasks:</label><p>{todoList.length}</p>
+                <label>Completed:</label><p>{todoList.filter(todo => todo.isCompleted).length}</p>
+                <label>Incompleted:</label><p>{todoList.filter(todo => !todo.isCompleted).length}</p>
             </div>
 
             <h3>All-Todo Lists</h3>
             <ul style={styleTodoList}>
-                {todoListArr.map(todo => (
+                {todoList.map(todo => (
                     <TodoItem
                         key={todo.id}
                         todo={todo}
