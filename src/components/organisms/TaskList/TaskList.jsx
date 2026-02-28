@@ -4,7 +4,7 @@ import { InputForm } from "../../molecules/InputForm/InputForm";
 
 import styles from "./TaskList.module.css"
 
-export const Task = () => {
+export const TaskList = () => {
     const [todoContent, setTodoContent] = useState("");
     const [todoList, setTodoList] = useState([]);
 
@@ -53,7 +53,7 @@ export const Task = () => {
     return ( 
         <div className={styles.content}>
             <h3>Task Input</h3>
-            <div className={styles.Input}>
+            <div className={styles.input}>
                 <InputForm
                     todoContent={todoContent}
                     setTodoContent={setTodoContent}
@@ -61,14 +61,14 @@ export const Task = () => {
                 />
             </div>
 
-            <div className={styles.TaskShow}>
+            <div className={styles.show}>
                 <label>All-tasks:</label><p>{todoList.length}</p>
                 <label>Completed:</label><p>{todoList.filter(todo => todo.isCompleted).length}</p>
                 <label>Incompleted:</label><p>{todoList.filter(todo => !todo.isCompleted).length}</p>
             </div>
 
             <h3>All-Todo Lists</h3>
-            <ul className={styles.TodoList}>
+            <ul className={styles.list}>
                 {todoList.map(todo => (
                     <TodoItem
                         key={todo.id}
