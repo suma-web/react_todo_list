@@ -33,15 +33,7 @@ export const Task = () => {
     }
     
     const onClickDelete = (id) => {
-        if (confirm("Do you want to delete this task?")) {
-            setTodoList(
-                [...todoList.filter((todo) => {
-                    return todo.id !== id;
-                })]
-            );
-        } else {
-            return;
-        }
+        confirm("Do you want to delete this task?") ? setTodoList(todoList.filter((todo) => todo.id !== id)): null;
     };
 
     const onClickCreateContent = () => {
