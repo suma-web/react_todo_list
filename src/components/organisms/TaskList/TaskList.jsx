@@ -9,12 +9,10 @@ export const TaskList = () => {
     const [todoList, setTodoList] = useState([]);
 
     const onClickCheck = (id) => {
-        setTodoList(
-            todoList.map((todo) =>
-                value.id === id ? { ...todo, isCompleted: !value.isCompleted } : todo
-            )
-        );
-    }
+    setTodoList((prev) =>
+        prev.map((todo) => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo)
+    );
+    };
 
     const onClickRewrite = (id) => {
         const targetTodo = todoList.find((todo) => todo.id === id);
