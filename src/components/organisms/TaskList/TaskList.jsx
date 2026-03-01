@@ -9,8 +9,8 @@ export const TaskList = () => {
     const [todoList, setTodoList] = useState([]);
 
     const onClickCheck = (id) => {
-    setTodoList((prev) =>
-        prev.map((todo) => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo)
+    setTodoList(() =>
+        todoList.map((todo) => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo)
     );
     };
 
